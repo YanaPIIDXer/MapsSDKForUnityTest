@@ -15,7 +15,30 @@ public abstract class Setting
 
 #region Access
     public static Setting Instance { get { return StaticInstance; } }
-    protected static Setting StaticInstance { private get; set; }
+    protected static Setting StaticInstance
+    {
+        private get
+        {
+            if(_StaticInstance == null) { throw new SettingInstanceNotSetException(); }
+            return _StaticInstance;
+        }
+        set{ _StaticInstance = value; }
+    }
+    private static Setting _StaticInstance = null;
     protected Setting() {}
 #endregion
+}
+
+/// <summary>
+/// Settingクラスインスタンスが設定されていないときに投げられる例外
+/// </summary>
+public class SettingInstanceNotSetException : Exception
+{
+    /// <summary>
+    /// コンストラクタ
+    /// </summary>
+    public SettingInstanceNotSetException()
+        : base("SettingクラスのStatincInstanceが設定されていません。")
+    {   
+    }
 }
