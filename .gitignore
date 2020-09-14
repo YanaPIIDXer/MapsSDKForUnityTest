@@ -60,5 +60,5 @@ crashlytics-build.properties
 
 .vscode/
 
-Assets/Scripts/Settings/LocalSetting.cs
-Assets/Scripts/Settings/LocalSetting.cs.meta
+Assets/Scripts/Environments/LocalEnvironments.cs
+Assets/Scripts/Environments/LocalEnvironments.cs.meta
