@@ -41,6 +41,6 @@ public class MapGenerator : MonoBehaviour
     {
         Service.InitFloatingOrigin(new LatLng(Lat, Lng));
         // ↓Exampleは使いたくなかったが、GameObjectOptionsの構築が面倒だったので止む無く失敬。
-        Service.LoadMap(ExampleDefaults.DefaultBounds, ExampleDefaults.DefaultGameObjectOptions);
+        Service.LoadMap(new Bounds(Vector3.zero, new Vector3(800.0f, 0.0f, 800.0f)), ExampleDefaults.DefaultGameObjectOptions);
     }
 }
