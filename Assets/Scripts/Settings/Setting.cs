@@ -29,7 +29,7 @@ public class Setting
     protected ISetting Interface
     {
         set { _Interface = value; }
-        get
+        private get
         {
             if(_Interface == null) { throw new SettingInterfaceNotSetException(); }
             return _Interface;
@@ -40,7 +40,7 @@ public class Setting
 
 #region Singleton
     public static Setting Instance { get { return _Instance; } }
-    private static Setting _Instance = new Setting();
+    protected static Setting _Instance { private get; set; }
     protected Setting() {}
 #endregion
 }
