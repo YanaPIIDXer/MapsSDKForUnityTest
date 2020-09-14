@@ -41,7 +41,7 @@ public class Setting
 #region Singleton
     public static Setting Instance { get { return _Instance; } }
     private static Setting _Instance = new Setting();
-    private Setting() {}
+    protected Setting() {}
 #endregion
 }
 
